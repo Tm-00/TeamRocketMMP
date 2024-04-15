@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        * {
+            text-decoration: none;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        body{
+            text-align: center;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .H1{
+        display: flex;
+        }
+        nav {
+          overflow: hidden;
+          text-align: center;
+          margin-left: 160px;
+          padding-left: 100px;
+          font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        nav a {
+          float: left;
+          display: block;
+          color: black;
+          text-align: center;
+          padding-top: 20px;
+          padding-bottom: 5px;
+          margin-left: 30px;
+          text-decoration: none;
+          transition: border-bottom 0.3s; 
+          border-bottom: 2px solid transparent; 
+          font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+      
+        nav a:hover {
+          border-bottom: 2px solid #129B04;
+        }
+        .button {
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 13px;
+        color: black;
+        border-radius: 5px;
+        transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .button:hover {
+        background-color: #E8FFE8;
+        border: 2px solid #129B04;
+        }
+
+        .f1{
+            display :flex;
+        }
+        .buttons a {
+            display: block;
+            font-size: 12px;
+
+        }
+        .card img{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 5px 25px;
+            display: block;
+        }
+        label{
+            display: block;
+            width: 200px;
+            background: #129B04;
+            color: #E8FFE8;
+            padding: 2px;
+            margin: 3px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input{
+            display: none;
+        }
+        h5{
+            color: grey;
+            text-decoration: none;
+        }
+        .hero{
+            width: 950px;
+            height: 100px;
+            margin: 10px;
+        }
+        #calender{
+            width: 100px;
+            position: absolute;
+        }
+        .map{
+            width: 90px;
+            height: 80vh;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        iframe{
+            width:1000px;
+            height:450px;
+            margin: 3px;
+        }
+        .b3{
+            width: 200px;
+            background: #129B04;
+            color: #E8FFE8;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .b1{
+            display: flex;
+        }
+        .b1 a{
+            margin-left: 100px;
+        }
+</style>
+<body>
+    <div class="H1">
+        <div>
+            <img src="./Images/logo/logo.png" alt=""style="width: 50px; height: auto;">
+        </div>
+        <div>
+            <nav>
+                <a href="./index.html"><b>Home</b></a>
+                <a href="#"><b>Careers </b></a>
+                <a href="#"><b>Service </b></a>
+                <a href="#"><b>Advice </b></a>
+                <a href="#"><b>Donate </b></a>
+                <a href="#"><b>Contact us </b></a>
+            </nav>
+              
+        </div>
+        <div>
+            <nav>
+                <a href="./index.html"><b>Logout</b></a>
+            </nav>
+        </div>
+        
+    </div>
+    <div class="f1">
+        <div class="buttons">
+            <div class="her">
+                <div class="card">
+                    <img src="./CarerDashboard/img/default image.jpeg" id="profile-pic">
+                    <label for="Input-file">Update Image</label>
+                    <input type="file" accept="image/jpeg, image/png, image/jpg" id="Input-file">
+                </div>
+            </div>
+            <a href="./Dashboard.html" class="button"><b>Dashboard</b></a>
+            <a href="#" class="button" onclick="showMessages()" on><b>Messages</b></a>
+            <a href="#" class="button" onclick="showNotifications()" on><b>Notificatons</b></a>
+            <a href="#" class="button" onclick="showEvents()" on><b>Events</b></a>
+            <a href="#" class="button" onclick="showMap()" on><b>Map</b></a>
+            <a href="#" class="button" onclick="showManage()" on><b>Manage Carers</b></a>
+            <a href="#" class="button" onclick="showSetting()" on><b>Settings</b></a>
+            <h5>
+                Social Links
+            </h5>
+            <a href="#" class="button"><b>Communities </b></a>
+            <a href="#" class="button"><b>Gmail</b></a>
+
+        </div>
+        <div id="dashboard">
+            
+        </div>
+    </div>
+    <script>
+        
+        
+        let profilePic =document.getElementById("profile-pic");
+        let inputFile =document.getElementById("Input-file");
+        inputFile.onchange=function() {
+            profilePic.src =URL.createObjectURL(inputFile.files[0]);
+        }
+
+        const showMessages = () => {
+            document.getElementById('dashboard').innerHTML =  `
+                <div>
+        my bro
+    </div>
+            `;
+        }; 
+        const showNotifications = () => {
+            document.getElementById('dashboard').innerHTML =  `
+            hey
+            `;
+        }; 
+        const showEvents = () => {
+            document.getElementById('dashboard').innerHTML =  `
+                <div>
+        what
+    </div>
+            `;
+        }; 
+        const showMap = () => {
+            document.getElementById('dashboard').innerHTML =  `
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d77540.68402658866!2d-2.172699!3d52.603125!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1713146203771!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="b1">
+                <a href="https://maps.app.goo.gl/6u877E5CLitRQx3A6" class="b3"><b>Veiw current location</b></a>
+                <a href="https://maps.app.goo.gl/mWAvDPfy7L97Eqvb7" class="b3"><b>Add pin</b></a>
+                <a href="https://maps.app.goo.gl/mWAvDPfy7L97Eqvb7" class="b3"><b>Clear pin</b></a>
+            </div>
+            `;
+        }; 
+        const showManage = () => {
+            document.getElementById('dashboard').innerHTML =  `
+                <div>
+        jjj
+    </div>
+            `;
+        }; 
+
+        const showSetting = () => {
+            document.getElementById('dashboard').innerHTML =  `
+                <div>
+        jjj
+    </div>
+            `;
+        }; 
+        $(document).ready(function() {
+    $('#calendar').evoCalendar({
+
+    })})
+    </script>
+
+</body>
+</html>
