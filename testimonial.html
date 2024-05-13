@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#bg-video {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+
+.H1{
+display: flex;
+background-color: #139b047e;
+}
+nav {
+
+    overflow: hidden;
+    text-align: center;
+    margin-left: 160px;
+    padding-left: 100px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+nav a {
+    font-size: large;
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    margin-left: 30px;
+    text-decoration: none;
+    transition: border-bottom 0.3s; 
+    border-bottom: 2px solid transparent; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav a:hover {
+    border-bottom: 2px solid white ;
+}
+.b1 {
+    background-color: #129B04;
+    border: none; 
+    color: white; 
+    padding: 5px 32px;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin-bottom:181px ;
+    cursor: pointer; 
+    border-radius: 100px; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .b2{
+    margin: 30px 5px ;
+    background-color: #129B04;
+    border: none; 
+    color: white; 
+    padding: 10px 50px;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin-bottom:60px ;
+    cursor: pointer; 
+    border-radius: 5px; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .b1:hover {
+    background-color: #129B04;
+    } 
+    
+
+    h1{
+    color: #129B04;
+    margin-top: 200px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    h2{
+    background-image: linear-gradient(to right, #129B04,#063501 );
+    background-clip:text;
+    -webkit-text-fill-color: transparent; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 10px;
+    }
+    h4{
+    margin: 10px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align:center;
+    }
+    h3{
+    color: #129B04;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .second{
+    display: flex;
+    }
+    .mission1{
+    background-color: whitesmoke;
+
+    }
+    .mission2{
+    background-image: url('./Images/logo/mission.jpeg');
+    padding: 5px 341.4px;
+    background-size: cover;
+    }
+    .mission3{
+    background-image: url('./Images/logo/lower.png');
+    padding: 5px 341.4px;
+    background-size: cover;
+    }
+.h{
+    text-align: center;
+}
+.branch{
+    display: flex;
+}
+.branch1{
+    display: block;
+    margin: 10px;
+}
+.ca{
+    margin: 10px 150px;
+}
+.cc{
+    margin: 1px 110px;
+}
+.cb{
+    margin: 10px 150px;
+}
+.cd{
+    margin: 10px 150px;
+}
+#fonta{
+    color: #129B04;
+}
+.larger-icon {
+    font-size: 36px; 
+}
+.care{
+    background-color: whitesmoke;
+}
+.branch img{
+    display: flex;
+    margin: 40px;
+    border-radius: 10px;
+}
+.me{
+    background-color:#f7f7f7;
+    border-radius: 10px;
+}
+h6{
+    margin-bottom: 10px;
+    color: black;
+    background-color: #D9D9D9;
+    border-radius: 200px;
+    padding: 10px 20px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h5{
+    margin: 10px;
+}
+footer{
+    display: flex;
+    background-color: whitesmoke;
+    padding-top: 20px;
+}
+.f1{
+    margin: 20px 80px;
+
+}
+
+.f1 a{
+    margin-top: 5px;
+    margin-bottom: 6px;
+    font-size: small;
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    transition: border-bottom 0.3s; 
+    border-bottom: 2px solid transparent; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.media a{
+    margin: 10px 20px;
+}
+.f2{
+    display: flex;
+    color: gray;
+    border-top: 1px solid gray;
+    margin-top:1px;
+    padding-top: 20px;
+}
+.f3{
+    margin-left: 750px;
+}
+.about1{
+    margin-top: 560px;
+}
+</style>
+<body>
+<div class="video-container">
+    <video autoplay muted loop id="bg-video">
+        <source src="./Images/about/testem.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="first">
+    <div class="H1">
+        <div class="opera">
+            <img src="./Images/logo/logo.png" alt=""style="width: 50px; height: auto;">
+        </div>
+        <div>
+            <nav>
+                <a href="./index.php"><b>Home</b></a>
+                <a href="./careers.html"><b>Careers </b></a>
+                <a href="./testimonial.html"><b>Testimonials </b></a>
+                <a href="./Advice.html"><b>Advice </b></a>
+                <a href="./About.html"><b>About Us </b></a>
+            </nav>
+              
+        </div>
+        <div>
+            
+        </div>
+</div>
+
+
+
+<div class="about1">
+    <div>
+        <h2>
+            Testimonials
+        </h2>
+        <h5>
+            Hear what others think
+        </h5>
+        <div class="branch1">
+            <div class="me">
+                <img src="./Images/testemonials/T1.jpeg" alt=""style="width: 250px; height: 300px;">
+                <h6>"I've never felt so cared for and understood. My health carer not only tended to my needs but also took the time to listen and share stories. They've become like family to me."<p></p>
+
+
+                    Margaret Thompson, 78</h6>
+            </div>
+            <div class="me">
+                <img src="./Images/testemonials/t2.jpeg" alt=""style="width: 250px; height: auto; ">
+                <h6>
+                    "Having a health carer has truly made my life easier. They're always  there with a smile and a helping hand, making sure I'm comfortable and  well taken care of. I couldn't ask for more."<p></p>
+
+
+                 Evelyn Miller Age: 62
+                </h6>
+            </div>
+            <div class="me">
+                <img src="./Images/testemonials/t3.jpeg" alt=""style="width: 250px; height: auto;">
+                <h6>
+                    "I was hesitant at first about having a health carer, but now I can't  imagine life without them. Their compassion and dedication have made  such a difference in my daily routine. I feel supported and valued."<p></p>
+
+                 Harold Johnson Age: 75
+                </h6>
+            </div>
+            <div class="me">
+                <img src="./Images/testemonials/t4.jpeg" alt=""style="width: 250px; height: auto;">
+                <h6>
+                    "With the help of my health carer, I've regained a sense of independence  and dignity. They respect my preferences and always treat me with  kindness and respect. I'm grateful for their presence in my life."<p></p>
+
+                 Alice Rodriguez Age: 83
+                </h6>
+            </div>
+            <div class="me">
+                <img src="./Images/testemonials/t5.jpeg" alt=""style="width: 250px; height: auto;">
+                <h6>
+                    "Having a dedicated caregiver has truly brightened my days. Their  kindness and attention to detail make me feel cherished and valued. I'm  grateful for their presence in my life."<p></p>
+
+
+                  Mildred Williams. Age: 57
+                </h6>
+            </div>
+            <div class="me">
+                <img src="./Images/testemonials/t6.jpeg" alt=""style="width: 250px; height: auto;">
+                <h6>
+                    "As I've grown older, I've come to appreciate the importance of companionship and support. My caregiver goes above and beyond to ensure I'm comfortable and content. With their help, I feel more confident and at ease."<p></p>
+                    Margaret Thompson. Age: 82
+                </h6>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        
+        <footer>
+            <div class="f1">
+                <img src="./Images/logo/logo.png" alt=""style="width: 50px; height: auto;">
+                <div class="f1">
+                    <h2>
+                        SPEC
+                        <i class="fa fa-plus-circle " id="fonta"></i>
+                    </h2>
+                </div>
+                <h5>
+                    Copyright  Blah Blah Blah
+                </h5>
+                <div class="media">
+                    <a href=""><i class="fa fa-facebook " id="fonta"></i></a>
+                    <a href=""><i class="fa fa-twitter " id="fonta"></i></a>
+                    <a href=""><i class="fa fa-instagram " id="fonta"></i></a>
+                    <a href=""><i class="fa fa-linkedin " id="fonta"></i></a>
+                    <a href=""><i class="fa fa-youtube " id="fonta"></i></a>
+                </div>
+            </div>
+
+            <div class="f1">
+            <h3>
+                Company
+            </h3>  
+            <div>
+            <a href="">About</a>
+            </div><div>
+            <a href="">Contact us</a>
+            </div><div>
+            <a href="">Careers</a>
+            </div><div>
+            <a href="">Culture</a>
+            </div><div>
+            <a href="">Blog</a>
+            </div>
+            </div>
+
+            <div class="f1">
+                <h3>
+                Support
+                </h3>
+                <div>
+                <a href="">Getting Started</a>
+                </div><div>
+                <a href="">Help center</a>
+                </div><div>
+                <a href="">Server status</a>
+                </div><div>
+                <a href="">Report a bug</a>
+                </div><div>
+                <a href="">Chat support</a>
+            </div>
+            </div>
+
+
+            <div class="f1">
+                <h3>
+                Contact us
+                </h3>
+                <div>
+                <a href=""><i class="fa fa-envelope " id="fonta"></i> contact@company.com</a>
+                </div><div>
+                    <a href=""><i class="fa fa-phone " id="fonta"></i> (414) 687 - 5892</a>
+                </div><div>
+                    <a href="">  <i class="fa fa-map-marker " id="fonta"></i>  1234 Rainbow Avenue, <p></p> Fantasia City, Wonderland
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <div class="f2">
+            <div>
+                <p>Copyright &copy; 2024.</p>
+            </div>
+            <div class="f3">
+                <p> All rights reserve|<a href="">Terms and Conditions</a>|<a href="">Privacy Policy</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

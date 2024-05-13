@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#bg-video {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+
+.H1{
+display: flex;
+background-color: #139b047e;
+}
+nav {
+    overflow: hidden;
+    text-align: center;
+    margin-left: 160px;
+    padding-left: 100px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+nav a {
+    font-size: large;
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    margin-left: 30px;
+    text-decoration: none;
+    transition: border-bottom 0.3s; 
+    border-bottom: 2px solid transparent; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav a:hover {
+    border-bottom: 2px solid white;
+}
+.b1 {
+    background-color: #129B04;
+    border: none; 
+    color: white; 
+    padding: 5px 32px;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin-bottom:181px ;
+    cursor: pointer; 
+    border-radius: 100px; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .b2{
+    margin: 30px 5px ;
+    background-color: #129B04;
+    border: none; 
+    color: white; 
+    padding: 10px 50px;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin-bottom:60px ;
+    cursor: pointer; 
+    border-radius: 5px; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .b1:hover {
+    background-color: #129B04;
+    } 
+    
+
+    h1{
+    color: #129B04;
+    margin-top: 200px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    h2{
+    background-image: linear-gradient(to right, #129B04,#063501 );
+    background-clip:text;
+    -webkit-text-fill-color: transparent; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 10px;
+    }
+    h4{
+    margin: 10px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align:center;
+    background-color:#f7f7f7;
+    border-radius: 10px;
+    }
+    h3{
+    color: #129B04;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .second{
+    display: flex;
+    }
+    .mission1{
+    background-color: whitesmoke;
+
+    }
+    .mission2{
+    background-image: url('./Images/logo/mission.jpeg');
+    padding: 5px 341.4px;
+    background-size: cover;
+    }
+    .mission3{
+    background-image: url('./Images/logo/lower.png');
+    padding: 5px 341.4px;
+    background-size: cover;
+    }
+.h{
+    text-align: center;
+}
+.branch{
+    display: flex;
+}
+.branch1{
+    display: flex;
+    margin: 10px;
+}
+.ca{
+    margin: 10px 150px;
+}
+.cc{
+    margin: 1px 110px;
+}
+.cb{
+    margin: 10px 150px;
+}
+.cd{
+    margin: 10px 150px;
+}
+#fonta{
+    color: #129B04;
+}
+.larger-icon {
+    font-size: 36px; 
+}
+.care{
+    background-color: whitesmoke;
+}
+.branch img{
+    display: flex;
+    margin: 40px;
+    border-radius: 10px;
+}
+h6{
+    color: white;
+    background-color:rgba(0, 0, 0, 0.612);
+    border-radius: 200px;
+    padding: 10px 20px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h5{
+    margin: 10px;
+}
+footer{
+    display: flex;
+    background-color: whitesmoke;
+    padding-top: 20px;
+}
+.f1{
+    margin: 20px 80px;
+
+}
+.f1 a{
+    margin-top: 5px;
+    margin-bottom: 6px;
+    font-size: small;
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    transition: border-bottom 0.3s; 
+    border-bottom: 2px solid transparent; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.media a{
+    margin: 10px 20px;
+}
+.f2{
+    display: flex;
+    color: gray;
+    border-top: 1px solid gray;
+    margin-top:1px;
+    padding-top: 20px;
+}
+.f3{
+    margin-left: 750px;
+}
+.about1{
+    margin-top: 560px;
+}
+</style>
+<body>
+<div class="video-container">
+    <video autoplay muted loop id="bg-video">
+        <source src="./Images/about/aboutnew.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="first">
+    <div class="H1">
+        <div>
+            <img src="./Images/logo/logo.png" alt=""style="width: 50px; height: auto;">
+        </div>
+        <div>
+            <nav>
+                <a href="./index.php"><b>Home</b></a>
+                <a href="./careers.html"><b>Careers </b></a>
+                <a href="./testimonial.html"><b>Testimonials </b></a>
+                <a href="./Advice.html"><b>Advice </b></a>
+                <a href="./About.html"><b>About Us </b></a>
+            </nav>
+              
+        </div>
+       
+</div>
+
+
+
+<div class="about1">
+    <div>
+        <h1>
+            Who We Are  ? 
+        </h1>
+        <h2>
+            About:
+        </h2>
+        <h4>
+            Spec Care Home is a premier residential <p></p>
+            care facility located in the serene  <p></p>
+            neighborhood of Maple Grove in Cityville. <p></p>
+            We are dedicated to providing compassionate <p></p>
+            and personalized care to our residents,ensuring <p></p>
+            their comfort, safety, and well-being at all times. 
+        </h4>
+        <h2>
+            Services:
+        </h2>
+        <h4>
+            24/7 personalized care by trained and compassionate staff <p></p>
+            Assistance with activities of daily living, including bathing, dressing, and grooming <p></p>
+            Medication management supervised by licensed nurses <p></p>
+            Nutritious meals and snacks prepared by our in-house chef, catering to dietary needs and preferences <p></p>
+            Regular housekeeping and laundry services <p></p>
+            Planned recreational activities and social outings to promote engagement and enjoyment <p></p>
+            Beautifully landscaped gardens and outdoor spaces for relaxation and enjoyment <p></p>
+        </h4>
+        <h2>
+            Amenities:
+        </h2>
+        <h4>
+            Private and semi-private rooms with ensuite bathrooms <p></p>
+            Cozy common areas for socializing and relaxation <p></p>
+            On-site salon and spa services for residents' convenience and pampering <p></p>
+            Secure and monitored premises for peace of mind <p></p>
+            Accessible facilities for residents with mobility challenges <p></p>
+        </h4>
+        <h2>
+            Mission:
+        </h2>
+        <h4>
+            At Spec Care Home, our mission is to provide a nurturing <p></p>
+            and supportive environment where residents feel valued, <p></p>
+            respected, and cared for. We strive to enhance their <p></p>
+            quality of life by promoting independence, dignity, and fulfillment <p></p>
+            in a warm and welcoming setting. <p></p>
+        </h4>
+    </div>
+    <div>
+        
+        <footer>
+            <div class="f1">
+                <img src="./Images/logo/logo.png" alt=""style="width: 50px; height: auto;">
+                <div class="f1">
+                    <h2>
+                        SPEC
+                        <i class="fa fa-plus-circle " id="fonta"></i>
+                    </h2>
+                </div>
+                <h5>
+                    Copyright  Blah Blah Blah
+                </h5>
+                <div class="media">
+                    <a href=""><i class="fa fa-facebook " id="fonta"></i></a>
+                    <a href=""><i class="fa fa-twitter " id="fonta"></i></a>
+                    <a href=""><i class="fa fa-instagram " id="fonta"></i></a>
+                    <a href=""><i class="fa fa-linkedin " id="fonta"></i></a>
+                    <a href=""><i class="fa fa-youtube " id="fonta"></i></a>
+                </div>
+            </div>
+
+            <div class="f1">
+            <h3>
+                Company
+            </h3>  
+            <div>
+            <a href="">About</a>
+            </div><div>
+            <a href="">Contact us</a>
+            </div><div>
+            <a href="">Careers</a>
+            </div><div>
+            <a href="">Culture</a>
+            </div><div>
+            <a href="">Blog</a>
+            </div>
+            </div>
+
+            <div class="f1">
+                <h3>
+                Support
+                </h3>
+                <div>
+                <a href="">Getting Started</a>
+                </div><div>
+                <a href="">Help center</a>
+                </div><div>
+                <a href="">Server status</a>
+                </div><div>
+                <a href="">Report a bug</a>
+                </div><div>
+                <a href="">Chat support</a>
+            </div>
+            </div>
+
+
+            <div class="f1">
+                <h3>
+                Contact us
+                </h3>
+                <div>
+                <a href=""><i class="fa fa-envelope " id="fonta"></i> contact@company.com</a>
+                </div><div>
+                    <a href=""><i class="fa fa-phone " id="fonta"></i> (414) 687 - 5892</a>
+                </div><div>
+                    <a href="">  <i class="fa fa-map-marker " id="fonta"></i>  1234 Rainbow Avenue, <p></p> Fantasia City, Wonderland
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <div class="f2">
+            <div>
+                <p>Copyright &copy; 2024.</p>
+            </div>
+            <div class="f3">
+                <p> All rights reserve|<a href="">Terms and Conditions</a>|<a href="">Privacy Policy</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#bg-video {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+.H1{
+display: flex;
+background-color: #139b047e;
+}
+nav {
+    overflow: hidden;
+    text-align: center;
+    margin-left: 160px;
+    padding-left: 100px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+nav a {
+    font-size: large;
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    margin-left: 30px;
+    text-decoration: none;
+    transition: border-bottom 0.3s; 
+    border-bottom: 2px solid transparent; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav a:hover {
+    border-bottom: 2px solid white;
+}
+.b1 {
+    background-color: #129B04;
+    border: none; 
+    color: white; 
+    padding: 5px 32px;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin-bottom:181px ;
+    cursor: pointer; 
+    border-radius: 100px; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .b2{
+    margin: 30px 5px ;
+    background-color: #129B04;
+    border: none; 
+    color: white; 
+    padding: 10px 50px;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin-bottom:60px ;
+    cursor: pointer; 
+    border-radius: 5px; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .b1:hover {
+    background-color: #129B04;
+    } 
+    
+
+    h1{
+    color: #129B04;
+    margin-top: 200px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    h2{
+    background-image: linear-gradient(to right, #129B04,#063501 );
+    background-clip:text;
+    -webkit-text-fill-color: transparent; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 10px;
+    }
+    h4{
+    margin: 10px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align:center;
+    background-color:#f7f7f7;
+    border-radius: 10px;
+    }
+    h3{
+    color: #129B04;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .second{
+    display: flex;
+    }
+    .mission1{
+    background-color: whitesmoke;
+
+    }
+    .mission2{
+    background-image: url('./Images/logo/mission.jpeg');
+    padding: 5px 341.4px;
+    background-size: cover;
+    }
+    .mission3{
+    background-image: url('./Images/logo/lower.png');
+    padding: 5px 341.4px;
+    background-size: cover;
+    }
+.h{
+    text-align: center;
+}
+.branch{
+    display: flex;
+}
+.branch1{
+    display: flex;
+    margin: 10px;
+}
+.ca{
+    margin: 10px 150px;
+}
+.cc{
+    margin: 1px 110px;
+}
+.cb{
+    margin: 10px 150px;
+}
+.cd{
+    margin: 10px 150px;
+}
+#fonta{
+    color: #129B04;
+}
+.larger-icon {
+    font-size: 36px; 
+}
+.care{
+    background-color: whitesmoke;
+}
+.branch img{
+    display: flex;
+    margin: 40px;
+    border-radius: 10px;
+}
+h6{
+    color: white;
+    background-color:rgba(0, 0, 0, 0.612);
+    border-radius: 200px;
+    padding: 10px 20px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h5{
+    margin: 10px;
+}
+footer{
+    display: flex;
+    background-color: whitesmoke;
+    padding-top: 20px;
+}
+.f1{
+    margin: 20px 80px;
+
+}
+.f1 a{
+    margin-top: 5px;
+    margin-bottom: 6px;
+    font-size: small;
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    transition: border-bottom 0.3s; 
+    border-bottom: 2px solid transparent; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.media a{
+    margin: 10px 20px;
+}
+.f2{
+    display: flex;
+    color: gray;
+    border-top: 1px solid gray;
+    margin-top:1px;
+    padding-top: 20px;
+}
+.f3{
+    margin-left: 750px;
+}
+.about1{
+    margin-top: 560px;
+}
+</style>
+<body>
+<div class="video-container">
+    <video autoplay muted loop id="bg-video">
+        <source src="./Images/about/advice1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="first">
+    <div class="H1">
+        <div>
+            <img src="./Images/logo/logo.png" alt=""style="width: 50px; height: auto;">
+        </div>
+        <div>
+            <nav>
+                <a href="./index.php"><b>Home</b></a>
+                <a href="./careers.html"><b>Careers </b></a>
+                <a href="./testimonial.html"><b>Testimonials </b></a>
+                <a href="./Advice.html"><b>Advice </b></a>
+                <a href="./About.html"><b>About Us </b></a>
+            </nav>
+              
+        </div>
+     
+</div>
+
+
+
+<div class="about1">
+    <div>
+        <h1>
+            Legal Advice and benefits
+        </h1>
+
+        <h3>
+            There are many laws and befits that both carers and pensioners are entitled to but <p></p>
+            simply are unaware of them. Here are all of the legal terms and benefits that you should be aware of:
+        </h3>
+        <h2>
+            For Carers: <p></p>
+            Support available: <p></p>
+            Carers assessment <p></p>
+        </h2>
+        <h4>
+            A carers assessment is a free face to face or online meeting with your <p></p>
+            local council to simply discuss how your life as a carer is fairing as well as discuss <p></p>
+            <p></p>any issues that you may be facing regarding you caring experience. More specifically they will discuss topics such as:
+            • your role as a carer <p></p>
+            • how you feel about caring <p></p>
+            • whether you’re able or willing to carry on as a carer <p></p>
+            • your health <p></p>
+            • your work <p></p>
+            • other caring responsibilities <p></p>
+            • what you enjoy doing in your free time <p></p>
+            • planning for emergencies. <p></p>
+            It's important to be as honest as possible otherwise there is a chance you <p></p> 
+            could miss out on eligibility of many benefits. There are many different forms of <p></p> support that can be gained through this such as:
+            • help with housework or gardening jobs <p></p>
+            • Additional training towards caring <p></p>
+            • equipment or alterations to your home <p></p>
+            • emotional support such as counselling <p></p>
+            • breaks from caring <p></p>
+            • Benefits advice <p></p>
+            • support to improve your wellbeing, such as access to exercise classes, social activities or adult education. <p></p>
+            The monetary process in both applying for a carer assessment as well as any benefits recommend <p></p> or gained are handled by the council. 
+        </h4>
+        <h2>
+            Self Care:
+        </h2>
+        <h4>
+            It's important for a carer to look after their own well being just as much as they look after any of their clients. When working as a carer it can be surprisingly easy to forget to keep track of <p></p> your own health both physically and mentally since being a carer constantly watching over others can be taxing over time. Whist it's good to remain dutiful you should also take precautions in order to ensure that you remain healthy and well rested especially since it could not only affect you of course but it could also hinder your caring abilities towards your client, causing them hassle. 
+            Maintaining Health: <p></p>
+            Here are some good ways to ensure that you are maintaining a healthy life style: <p></p>
+            • Taking frequent breaks or holidays <p></p>
+            • Keeping your body in shape <p></p>
+            • Getting enough sleep <p></p>
+            • Having a positive nutritional intake <p></p>
+            • Keeping active <p></p>
+            • Taking up opportunities to socialise <p></p>
+            • Having frequent medical checkups <p></p>
+            [9:35 AM] 
+            Benefits that can be claimed: <p></p>
+            Carers allowance: <p></p>
+            • A weekly allowance for carers <p></p>
+            • Eligible if you care for at least 35 hours a week, must also be receiving one of the following - PIP(personal independence payment), DLA(Disability Living allowance),Attendance Allowance
+            • Must earn less then £132 a week(after tax) or in full time education <p></p>
+            • The person cared for must be <p></p>
+            • Could receive at least £76 a week <p></p>
+        </h4>
+        <h2>
+            Personal independence payment (PIP): <p></p>
+        </h2>
+        <h4>
+            • A Benefit made to replace DLA  <p></p>
+            • Eligible if you are under state pension age and you have a registered disability that affects your daily life with one of the following: <p></p>
+            • preparing or eating food <p></p>
+            • washing, bathing, and using the toilet <p></p>
+            • dressing and undressing <p></p>
+            • reading and communicating <p></p>
+            • managing your medicines or treatments <p></p>
+            • making decisions about money <p></p>
+            • engaging with other people <p></p>
+            • Could receive between receive between £26 and £172 per week based on your medical condition <p></p>
+        </h4>
+        <h2>
+            For Pensioners: <p></p>
+            Support available: <p></p>
+            Needs assessment: <p></p>
+        </h2>
+        <h4>
+            A needs assessment is a free test that anybody requiring care can take in order to gauge what forms of benefits they may be eligible to claim. The test  <p></p>itself can be provided to a person by their local council. Despite it being called an <p></p> assessment there are no specific answers or criteria that are needed on it but a simple <p></p> honest overview of your circumstances and current conditions. <p></p> The way a needs assessment works is that you will have a talk with a trained care professional where <p></p> they will ask you about how you handle simple day to day chores such as cooking, cleaning or dressing as well as any other tasks of a similar sort and ask about any difficulties you may have doing these tasks. <p></p> Needs assessments are usually done in an online meeting or face to face. After <p></p> listening and evaluating your information and claims they will tell you what benefits you <p></p> might be Eligable for.
+            It's best to prepare the following information before the meeting: <p></p>
+            • Your care and support needs <p></p>
+            • the things that are important to them, such as a need to help with getting dressed or support to get to work  <p></p>
+            • their choices and goals, such as maintaining relationships or taking up a new activity  <p></p>
+            • their family’s needs. <p></p>
+            • Must be over the age of 18 to take a needs assessment <p></p>
+        </h4>
+
+        <h2>
+            Benefits that can be claimed:
+        </h2>
+        <h4>
+            Pension credit(Garunteed credit/saving credit): <p></p>
+            • Garunteed credit means top up on income if it’s below £201 (for single people) or £306 (for couples). <p></p>
+            • Saving credit is available to Pentioners who had saved money towards their retirement <p></p>
+            • Eligible for £15 a week (for single people) or £17 a week (for couples). <p></p>
+            Also eligible for: <p></p>
+            • Free TV Licence <p></p>
+            • Council tax reduction <p></p>
+            • Housing benefit  <p></p>
+            for those who pay rent <p></p>
+            •  weather payments <p></p>
+            Entitled to £25 if average UK weather is under 0°C <p></p>
+        </h4>
+        <h2>
+            Winter fuel payment:
+        </h2>
+        <h4>
+            • Receive between 200-650 to help pay heating bills <p></p>
+            • Eligible if you receive state pension or pension credit <p></p>
+        </h4>
+        <h2>
+            Attendance Allowance:
+        </h2>
+        <h4>
+            • Eligable if you are at state pension age and have a disability that affects daily life + are signed up with a carer <p></p>
+            • Receives varying amount of money based on circumstances <p></p>
+            • Receives up to £68 if under frequent supervision <p></p>
+            • Receives up to £101 if required to be under constant supervision <p></p>
+        </h4>
+        <h2>
+            Bereavement Support Payment:
+        </h2>
+        <h4>
+            • For those who have lost their Husband/wife/civil partner within the last 21 months <p></p>
+            • Will gain different amount based on the rates Entitled to <p></p>
+            • If receiving child benefits will receive the higher rate and receive a total of £3500 split into monthly payment <p></p>
+            • If not you will receive the Lower rate and receive a total of £2500 split into monthly payments <p></p>
+
+        </h4>
+        <h2>
+            Discounted travel:
+        </h2>
+        <h4>
+            • Eligible for elderly(over 60) who require use of public transport <p></p>
+            • Can receive a free bus pass, Free train rides(if you live in london)
+        </h4>
+        <h2>
+            Any complaints regarding our services:
+        </h2>
+        <h3>
+            If you have any complaints or issues with the services we provide than please ensure to report on <p>
+
+            </p>those issues using our contact services provided. The quicker the issue is reported the quicker we can resolve it.
+        </h3>
+    </div>
+    <div>
+        
+        <footer>
+            <div class="f1">
+                <img src="./Images/logo/logo.png" alt=""style="width: 50px; height: auto;">
+                <div class="f1">
+                    <h2>
+                        SPEC
+                        <i class="fa fa-plus-circle " id="fonta"></i>
+                    </h2>
+                </div>
+                <h5>
+                    Copyright  Blah Blah Blah
+                </h5>
+                <div class="media">
+                    <a href=""><i class="fa fa-facebook " id="fonta"></i></a>
+                    <a href=""><i class="fa fa-twitter " id="fonta"></i></a>
+                    <a href=""><i class="fa fa-instagram " id="fonta"></i></a>
+                    <a href=""><i class="fa fa-linkedin " id="fonta"></i></a>
+                    <a href=""><i class="fa fa-youtube " id="fonta"></i></a>
+                </div>
+            </div>
+
+            <div class="f1">
+            <h3>
+                Company
+            </h3>  
+            <div>
+            <a href="">About</a>
+            </div><div>
+            <a href="">Contact us</a>
+            </div><div>
+            <a href="">Careers</a>
+            </div><div>
+            <a href="">Culture</a>
+            </div><div>
+            <a href="">Blog</a>
+            </div>
+            </div>
+
+            <div class="f1">
+                <h3>
+                Support
+                </h3>
+                <div>
+                <a href="">Getting Started</a>
+                </div><div>
+                <a href="">Help center</a>
+                </div><div>
+                <a href="">Server status</a>
+                </div><div>
+                <a href="">Report a bug</a>
+                </div><div>
+                <a href="">Chat support</a>
+            </div>
+            </div>
+
+
+            <div class="f1">
+                <h3>
+                Contact us
+                </h3>
+                <div>
+                <a href=""><i class="fa fa-envelope " id="fonta"></i> contact@company.com</a>
+                </div><div>
+                    <a href=""><i class="fa fa-phone " id="fonta"></i> (414) 687 - 5892</a>
+                </div><div>
+                    <a href="">  <i class="fa fa-map-marker " id="fonta"></i>  1234 Rainbow Avenue, <p></p> Fantasia City, Wonderland
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <div class="f2">
+            <div>
+                <p>Copyright &copy; 2024.</p>
+            </div>
+            <div class="f3">
+                <p> All rights reserve|<a href="">Terms and Conditions</a>|<a href="">Privacy Policy</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
