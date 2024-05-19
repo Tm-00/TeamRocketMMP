@@ -9,18 +9,16 @@ session_start();
 
 // (these lines of code include the database configuration file)
 include('functions/dbconfig.php');
+$patient_id = $_SESSION['patient_id'];
 
 if(isset($_POST['assign'])){  
     // <NAME> SIOBHAN UTETE
     // <CONTRIBUTION TO THIS PAGE> SECURING THE WEBSITE BY SANITIZING AND FILTERING
     // WITH  THE USE OF PHP
 
-    // (these lines of code retrieve the patient ID from the session and sanitize it)
-    $patient_id = filter_var($_SESSION['patient_id'], FILTER_SANITIZE_NUMBER_INT);
-    // (these lines of code retrieve the carer ID from the form and sanitize it)
-    $carer_id = filter_var($_POST['carer'], FILTER_SANITIZE_NUMBER_INT);
-    $_SESSION['carer_id'] = $carer_id;
 
+    // (these lines of code retrieve the carer ID from the form and sanitize it)
+    $carer_id = $_POST['carer'];
     // Check if maximum number of carers reached for the patient
     $check = "SELECT * FROM `assignment` WHERE patientID = ?";
     $stmt = mysqli_prepare($conn, $check);
@@ -28,11 +26,11 @@ if(isset($_POST['assign'])){
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
 
-    if(mysqli_num_rows($result) > 0){
+    if(mysqli_num_rows($result) > 2){
         // (these lines of code set an error message if the maximum number of carers is reached)
         $error = "MAXIMUM NUMBER OF CARERS REACHED";
         echo $error;
-        header("Refresh: 2; url=assign_carer.php");
+        header("Refresh: 2; url=index.php");
     }
     else{
         // Insert assignment into database
@@ -57,12 +55,14 @@ function getRandomCarerID() {
     global $conn;
 
     // Query to get a random available carer ID
-    $sql = "SELECT carer.carer_id 
-            FROM carer
-            LEFT JOIN assignment ON carer.carer_id = assignment.carer_id
-            WHERE assignment.patientID IS NULL
-            ORDER BY RAND() 
-            LIMIT 1";
+    $sql = "SELECT carer.carer_id
+    FROM carer
+    LEFT JOIN assignment ON carer.carer_id = assignment.carer_id
+    GROUP BY carer.carer_id
+    HAVING COUNT(assignment.patientID) <=1
+    ORDER BY RAND()
+    LIMIT 1";
+    
     
     $result = $conn->query($sql);
 
@@ -120,7 +120,7 @@ function getRandomCarerID() {
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
-                <form  action="" method="pos t">
+                <form  action="" method="post">
                  <!-- form message -->
                     <div class="row">
                         <div class="col-12">
@@ -133,7 +133,7 @@ function getRandomCarerID() {
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <input name="patient" id="name" type="text" class="form-control" placeholder = "<?php echo $_SESSION['first']." ".$_SESSION['last']?>" >
+                                <input name="patient" id="name" type="text" class="form-control" placeholder = "<?php echo $_SESSION['first']." ".$_SESSION['last'] ?>" >
                             </div>
                         </div>
 

@@ -250,7 +250,13 @@ footer{
         <div class="first">
             <div class="H1">
                 <div>
-                    <img src="./Images/logo/logo.png" alt=""style="width: 50px; height: auto;">
+                <?php if (isset($_SESSION['carer_id'])) : ?>
+                    <a href="dashboard-carer.php"> <img src="./Images/logo/logo.png" alt=""style="width: 50px; height: auto;"></a>
+                
+                    <?php elseif(isset($_SESSION['patient_id'])) : ?>
+                        <a href="dashboard-patient.php"> <img src="./Images/logo/logo.png" alt=""style="width: 50px; height: auto;"></a>
+                    <?php endif; ?>
+                   
                 </div>
                 <div>
                     <nav>

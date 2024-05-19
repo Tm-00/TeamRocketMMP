@@ -44,7 +44,7 @@ if(isset($_POST['request'])) {
 
     if (mysqli_stmt_execute($stmt)) {
         // (these lines of code redirect to the index page on successful appointment request)
-        header('Location: appontment_patient.php');
+        header('Location: appointment_patient.php');
     } 
 
     // Close the statement and database connection

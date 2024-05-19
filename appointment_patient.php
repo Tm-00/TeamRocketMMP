@@ -1,49 +1,25 @@
 <?php
 
-// Start a PHP session (these lines of code start a PHP session)
+// Start a PHP session
 session_start();
 
 // Include the database configuration file 
 include('functions/dbconfig.php');
 
-// <NAME> OLADIPUPO ROLAND FAMILUA 
-// <CONTRIBUTION TO THIS PAGE> The entire page apart from the header and footer
-// WITH  THE USE OF HTML,CSS and PHP
-
 // Get the patient ID from the session
 $patient_id = $_SESSION['patient_id'];
 
-// Prepare and execute SQL query to fetch appointments for the patient
-$query = "SELECT a.*, p.FirstName, p.LastName, p.Email, p.PhoneNumber 
-FROM appointment a 
-INNER JOIN patient p ON a.patientID = p.patientID 
-WHERE a.patientID = ?";
+// Prepare and execute SQL query to fetch appointments for the patient with carer information
+$query = "SELECT a.*, c.FirstName AS CarerFirstName, c.LastName AS CarerLastName, c.Email AS CarerEmail, c.PhoneNumber AS CarerPhone 
+          FROM appointment a 
+          INNER JOIN carer c ON a.carer_id = c.carer_id
+          WHERE a.patientID = ?";
 $stmt = mysqli_prepare($conn, $query);
 mysqli_stmt_bind_param($stmt, "i", $patient_id);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
-// Handle appointment update if submitted
-if(isset($_POST['update'])) {
-    
-    // Extract appointment details from the form
-    $appointment_id = $_POST['app_id']; 
-    $date = $_POST['date'];
-    $time = $_POST['time'];
 
-    // Update the appointment details in the database
-    $query = "UPDATE appointment SET date = ?, time = ? WHERE appointment_id = ?";
-    $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, "ssi", $date, $time, $appointment_id);
-    mysqli_stmt_execute($stmt);
-
-    // Check if the update was successful and refresh the page
-    if(mysqli_stmt_affected_rows($stmt) > 0) {
-        header("refresh:0");
-    } else {
-        echo "Failed to update appointment.". mysqli_error($conn);
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -81,14 +57,8 @@ if(isset($_POST['update'])) {
     <div class="row">
       <div class="col-md-12">
         <div class="block text-center">
-          <span class="text-white">YOUR APPOINTMENTS <?php echo $patient_id ?></span>
-          <h1 class="text-capitalize mb-5 text-lg">Appoinment Requests</h1>
-
-          <!-- <ul class="list-inline breadcumb-nav">
-            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
-            <li class="list-inline-item"><span class="text-white">/</span></li>
-            <li class="list-inline-item"><a href="#" class="text-white-50">Book your Seat</a></li>
-          </ul> -->
+          <span class="text-white">YOUR APPOINTMENTS </span>
+          <h1 class="text-capitalize mb-5 text-lg">Appointment Requests</h1>
         </div>
       </div>
     </div>
@@ -103,10 +73,10 @@ if(isset($_POST['update'])) {
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
+                            <th>Carer's First Name</th>
+                            <th>Carer's Last Name</th>
+                            <th>Carer's Email</th>
+                            <th>Carer's Phone</th>
                             <th>Appointment Date</th>
                             <th>Appointment Time</th>
                         </tr>
@@ -114,12 +84,19 @@ if(isset($_POST['update'])) {
                     <tbody>
                         <tr>
                             <td><?php echo $row['appointment_id']; ?></td>
-                            <td><?php echo $row['FirstName']; ?></td>
-                            <td><?php echo $row['LastName']; ?></td>
-                            <td><?php echo $row['Email']; ?></td>
-                            <td><?php echo $row['PhoneNumber']; ?></td>
-                            <td><input type="date" name="date" value="<?php echo $row['date']; ?>"></td>
-                            <td><input type="time" name="time" value="<?php echo $row['time']; ?>"></td>
+                            <td><?php echo $row['CarerFirstName']; ?></td>
+                            <td><?php echo $row['CarerLastName']; ?></td>
+                            <td><?php echo $row['CarerEmail']; ?></td>
+                            <td><?php echo $row['CarerPhone']; ?></td>
+                            
+                            
+                                <?php if ($row['time'] == '00:00:00'): ?>
+                                  <td>TBD</td>
+                                  <td>TBD</td>
+                                <?php else: ?>
+                                  <td><?php echo $row['date']; ?></td>
+                                  <td><?php echo $row['time']; ?></td>
+                                <?php endif; ?>
                             
                         </tr>
                     </tbody>
@@ -133,33 +110,28 @@ if(isset($_POST['update'])) {
 
 <!-- footer Start -->
 
+<!-- Essential Scripts -->
+<!-- Main jQuery -->
+<script src="plugins/jquery/jquery.js"></script>
+<!-- Bootstrap 4.3.2 -->
+<script src="plugins/bootstrap/js/popper.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="plugins/counterup/jquery.easing.js"></script>
+<!-- Slick Slider -->
+<script src="plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Counterup -->
+<script src="plugins/counterup/jquery.waypoints.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-    <!-- 
-    Essential Scripts
-    =====================================-->
+<script src="plugins/shuffle/shuffle.min.js"></script>
+<script src="plugins/counterup/jquery.counterup.min.js"></script>
+<!-- Google Map -->
+<script src="plugins/google-map/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
 
-    
-    <!-- Main jQuery -->
-    <script src="plugins/jquery/jquery.js"></script>
-    <!-- Bootstrap 4.3.2 -->
-    <script src="plugins/bootstrap/js/popper.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="plugins/counterup/jquery.easing.js"></script>
-    <!-- Slick Slider -->
-    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-    <!-- Counterup -->
-    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    
-    <script src="plugins/shuffle/shuffle.min.js"></script>
-    <script src="plugins/counterup/jquery.counterup.min.js"></script>
-    <!-- Google Map -->
-    <script src="plugins/google-map/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
-    
-    <script src="js/script.js"></script>
-    <script src="js/contact.js"></script>
+<script src="js/script.js"></script>
+<script src="js/contact.js"></script>
 
-  </body>
-  </html>
+</body>
+</html>
